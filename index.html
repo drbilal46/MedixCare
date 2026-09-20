@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MedixCare | Modern Healthcare & Medical Services</title>
+  <meta name="description" content="MedixCare is a modern healthcare website concept for professional medical services, doctors and appointment booking.">
+
+  <style>
+    :root {
+      --bg: #f5f8f8;
+      --surface: #ffffff;
+      --surface-soft: #eef5f4;
+      --text: #172323;
+      --muted: #687777;
+      --border: #dfe8e7;
+      --primary: #176b68;
+      --primary-dark: #0f514f;
+      --secondary: #dcefed;
+      --accent: #3d8f89;
+      --navy: #183334;
+      --danger: #b65353;
+      --shadow: 0 18px 45px rgba(23, 55, 54, 0.08);
+      --radius: 22px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
+    }
+
+    /* ================= HEADER ================= */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 800;
+      font-size: 21px;
+      color: var(--navy);
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: var(--primary);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 20px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    nav a {
+      color: #526363;
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.25s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--primary);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      border: none;
+      cursor: pointer;
+      border-radius: 12px;
+      padding: 12px 18px;
+      font-weight: 700;
+      transition: 0.25s;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-light {
+      background: var(--surface-soft);
+      color: var(--primary);
+      border: 1px solid var(--border);
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 26px;
+      cursor: pointer;
+      color: var(--navy);
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      padding: 82px 0 70px;
+      background:
+        radial-gradient(circle at 85% 15%, rgba(61,143,137,0.13), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--secondary);
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 6vw, 70px);
+      line-height: 1.04;
+      letter-spacing: -2.5px;
+      max-width: 720px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero p {
+      max-width: 610px;
+      color: var(--muted);
+      font-size: 17px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-note {
+      margin-top: 24px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      background: var(--secondary);
+      border-radius: 50%;
+      top: -80px;
+      right: -60px;
+    }
+
+    .medical-symbol {
+      width: 78px;
+      height: 78px;
+      border-radius: 22px;
+      background: var(--secondary);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-size: 38px;
+      font-weight: 900;
+      margin-bottom: 28px;
+      position: relative;
+    }
+
+    .hero-card h3 {
+      font-size: 23px;
+      margin-bottom: 8px;
+    }
+
+    .hero-card > p {
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    .availability {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 13px;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #4f9d67;
+    }
+
+    .doctor-mini {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+    }
+
+    .avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--surface-soft);
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .doctor-mini strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .doctor-mini small {
+      color: var(--muted);
+    }
+
+    /* ================= STATS ================= */
+
+    .stats {
+      margin-top: -10px;
+      padding-bottom: 70px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .stat {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      padding: 22px;
+      box-shadow: 0 8px 25px rgba(20,40,40,0.04);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 26px;
+      color: var(--navy);
+      margin-bottom: 3px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* ================= GENERAL SECTION ================= */
+
+    section {
+      padding: 78px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 42px;
+    }
+
+    .section-heading .eyebrow {
+      margin-bottom: 12px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.12;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* ================= SERVICES ================= */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 27px;
+      transition: 0.25s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+      border-color: #c9dcda;
+    }
+
+    .service-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 15px;
+      background: var(--secondary);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+
+    .service-card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* ================= DOCTORS ================= */
+
+    .doctors {
+      background: var(--surface);
+    }
+
+    .doctors-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .doctor-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: white;
+    }
+
+    .doctor-photo {
+      height: 210px;
+      background:
+        linear-gradient(145deg, #dcefed, #eef5f4);
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+      font-size: 54px;
+      font-weight: 800;
+    }
+
+    .doctor-info {
+      padding: 22px;
+    }
+
+    .doctor-info h3 {
+      margin-bottom: 3px;
+    }
+
+    .doctor-info .specialty {
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .doctor-info p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+
+    .doctor-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* ================= WHY US ================= */
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .why-panel {
+      background: var(--navy);
+      color: white;
+      border-radius: 28px;
+      padding: 38px;
+      min-height: 380px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .why-panel .eyebrow {
+      background: rgba(255,255,255,0.1);
+      color: #d6efec;
+      width: fit-content;
+    }
+
+    .why-panel h2 {
+      font-size: 38px;
+      line-height: 1.1;
+      margin-bottom: 15px;
+    }
+
+    .why-panel p {
+      color: #b9c9c8;
+      font-size: 14px;
+    }
+
+    .benefits {
+      display: grid;
+      gap: 22px;
+    }
+
+    .benefit {
+      display: flex;
+      gap: 15px;
+    }
+
+    .benefit-icon {
+      flex: 0 0 45px;
+      height: 45px;
+      border-radius: 13px;
+      background: var(--secondary);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+    }
+
+    .benefit h3 {
+      font-size: 17px;
+      margin-bottom: 4px;
+    }
+
+    .benefit p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* ================= APPOINTMENT ================= */
+
+    .appointment {
+      background: #edf5f4;
+    }
+
+    .appointment-box {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 38px;
+      box-shadow: var(--shadow);
+    }
+
+    .appointment-header {
+      margin-bottom: 28px;
+    }
+
+    .appointment-header h2 {
+      font-size: 32px;
+      margin-bottom: 7px;
+    }
+
+    .appointment-header p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 17px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #526363;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      background: #fbfcfc;
+      border-radius: 11px;
+      padding: 13px 14px;
+      outline: none;
+      color: var(--text);
+    }
+
+    .field textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(61,143,137,0.1);
+    }
+
+    .form-note {
+      margin-top: 15px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* ================= TESTIMONIALS ================= */
+
+    .testimonials {
+      background: var(--surface);
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .review {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 25px;
+    }
+
+    .stars {
+      color: #b38a4b;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
+
+    .review p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .review-user {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .review-user strong {
+      display: block;
+      font-size: 13px;
+    }
+
+    .review-user small {
+      color: var(--muted);
+    }
+
+    /* ================= CTA ================= */
+
+    .cta {
+      padding: 30px 0 90px;
+    }
+
+    .cta-box {
+      background: var(--primary);
+      color: white;
+      border-radius: 28px;
+      padding: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .cta-box h2 {
+      font-size: 34px;
+      line-height: 1.1;
+      margin-bottom: 9px;
+    }
+
+    .cta-box p {
+      color: #d1e6e4;
+      font-size: 14px;
+    }
+
+    .cta-box .btn {
+      background: white;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: var(--navy);
+      color: white;
+      padding: 55px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 35px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .footer-brand p {
+      color: #aebfbe;
+      font-size: 13px;
+      max-width: 310px;
+      margin-top: 14px;
+    }
+
+    footer h4 {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    footer a {
+      display: block;
+      color: #aebfbe;
+      font-size: 13px;
+      margin-bottom: 9px;
+      transition: 0.2s;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    .copyright {
+      padding-top: 22px;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      color: #91a4a2;
+      font-size: 12px;
+    }
+
+    /* ================= TOAST ================= */
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 25px;
+      transform: translate(-50%, 20px);
+      background: var(--navy);
+      color: white;
+      padding: 13px 18px;
+      border-radius: 12px;
+      font-size: 13px;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.3s;
+      z-index: 3000;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 900px) {
+
+      nav {
+        position: absolute;
+        top: 76px;
+        left: 0;
+        width: 100%;
+        background: white;
+        border-bottom: 1px solid var(--border);
+        padding: 20px 4%;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 17px;
+      }
+
+      nav.open {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-actions .btn-light {
+        display: none;
+      }
+
+      .hero-grid,
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 60px;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services-grid,
+      .doctors-grid,
+      .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .navbar {
+        min-height: 68px;
+      }
+
+      .brand {
+        font-size: 18px;
+      }
+
+      .brand-mark {
+        width: 36px;
+        height: 36px;
+      }
+
+      .hero {
+        padding: 52px 0 60px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+        letter-spacing: -1.5px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .stats-grid,
+      .services-grid,
+      .doctors-grid,
+      .reviews-grid,
+      .form-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .appointment-box {
+        padding: 25px;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      .cta-box {
+        padding: 32px 25px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .cta-box h2 {
+        font-size: 28px;
+      }
+
+      .copyright {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+
+  <header>
+    <div class="container navbar">
+
+      <a href="index.html" class="brand">
+        <span class="brand-mark">M</span>
+        <span>MedixCare</span>
+      </a>
+
+      <nav id="mainNav">
+        <a href="index.html" class="active">Home</a>
+        <a href="doctors.html">Doctors</a>
+        <a href="services.html">Services</a>
+        <a href="appointment.html">Appointments</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-light" onclick="showToast('Patient portal is available in the full version.')">
+          Patient Portal
+        </button>
+
+        <button class="btn btn-primary" onclick="scrollToAppointment()">
+          Book Appointment
+        </button>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+          ☰
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+
+  <main>
+
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div>
+          <div class="eyebrow">Trusted Healthcare</div>
+
+          <h1>
+            Better care starts with
+            <span>better access.</span>
+          </h1>
+
+          <p>
+            MedixCare is a modern healthcare platform designed to make
+            medical services, doctors and appointments easier to discover
+            and access.
+          </p>
+
+          <div class="hero-actions">
+            <button class="btn btn-primary" onclick="scrollToAppointment()">
+              Book an Appointment
+            </button>
+
+            <a href="doctors.html" class="btn btn-light">
+              Meet Our Doctors
+            </a>
+          </div>
+
+          <div class="hero-note">
+            ✓ Professional healthcare experience
+            <span>•</span>
+            ✓ Patient-focused approach
+          </div>
+        </div>
+
+
+        <div class="hero-card">
+
+          <div class="medical-symbol">+</div>
+
+          <h3>Quality care, closer to you.</h3>
+
+          <p>
+            Explore medical specialties, meet qualified doctors and
+            request an appointment through a simple digital experience.
+          </p>
+
+          <div class="availability">
+            <span class="dot"></span>
+            Appointments available
+          </div>
+
+          <div class="doctor-mini">
+            <div class="avatar">DR</div>
+
+            <div>
+              <strong>Medical Specialists</strong>
+              <small>Experienced healthcare professionals</small>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= STATS ================= -->
+
+    <section class="stats">
+      <div class="container stats-grid">
+
+        <div class="stat">
+          <strong>12+</strong>
+          <span>Medical specialties</span>
+        </div>
+
+        <div class="stat">
+          <strong>30+</strong>
+          <span>Healthcare professionals</span>
+        </div>
+
+        <div class="stat">
+          <strong>10k+</strong>
+          <span>Patient visits</span>
+        </div>
+
+        <div class="stat">
+          <strong>24/7</strong>
+          <span>Emergency assistance</span>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= SERVICES ================= -->
+
+    <section id="services">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">Our Services</div>
+          <h2>Healthcare built around your needs.</h2>
+          <p>
+            A clear overview of essential medical services and specialties
+            available through the MedixCare experience.
+          </p>
+        </div>
+
+        <div class="services-grid">
+
+          <div class="service-card">
+            <div class="service-icon">+</div>
+            <h3>General Medicine</h3>
+            <p>
+              Primary medical care for routine health concerns,
+              checkups and ongoing care.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">♥</div>
+            <h3>Cardiology</h3>
+            <p>
+              Professional cardiovascular care, consultation and
+              heart health assessment.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">◉</div>
+            <h3>Dermatology</h3>
+            <p>
+              Skin, hair and nail consultations with specialized
+              dermatology services.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">+</div>
+            <h3>Pediatrics</h3>
+            <p>
+              Dedicated healthcare services designed for infants,
+              children and adolescents.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">✚</div>
+            <h3>Diagnostics</h3>
+            <p>
+              Modern diagnostic services supporting accurate clinical
+              evaluation and treatment.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">24</div>
+            <h3>Emergency Care</h3>
+            <p>
+              Rapid access to emergency assistance for urgent medical
+              situations.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= DOCTORS ================= -->
+
+    <section class="doctors">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">Medical Team</div>
+          <h2>Meet our healthcare professionals.</h2>
+          <p>
+            A clean doctor discovery experience designed for modern
+            clinics and healthcare organizations.
+          </p>
+        </div>
+
+        <div class="doctors-grid">
+
+          <div class="doctor-card">
+            <div class="doctor-photo">DR</div>
+
+            <div class="doctor-info">
+              <h3>Dr. Sarah Malik</h3>
+              <div class="specialty">Internal Medicine</div>
+
+              <p>
+                Experienced physician focused on preventive care,
+                diagnosis and long-term patient health.
+              </p>
+
+              <div class="doctor-meta">
+                <span>12+ years experience</span>
+                <span>Mon–Fri</span>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="doctor-card">
+            <div class="doctor-photo">DR</div>
+
+            <div class="doctor-info">
+              <h3>Dr. Ahmed Khan</h3>
+              <div class="specialty">Cardiology</div>
+
+              <p>
+                Specialist in cardiovascular health, consultation
+                and comprehensive heart care.
+              </p>
+
+              <div class="doctor-meta">
+                <span>15+ years experience</span>
+                <span>Mon–Thu</span>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="doctor-card">
+            <div class="doctor-photo">DR</div>
+
+            <div class="doctor-info">
+              <h3>Dr. Maya Raza</h3>
+              <div class="specialty">Dermatology</div>
+
+              <p>
+                Dermatology specialist providing personalized skin,
+                hair and cosmetic healthcare.
+              </p>
+
+              <div class="doctor-meta">
+                <span>9+ years experience</span>
+                <span>Tue–Sat</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= WHY MEDIXCARE ================= -->
+
+    <section>
+      <div class="container why-grid">
+
+        <div class="why-panel">
+          <div class="eyebrow">Why MedixCare</div>
+
+          <h2>
+            A more thoughtful way to experience healthcare.
+          </h2>
+
+          <p>
+            Designed around clarity, accessibility and a patient-first
+            digital experience.
+          </p>
+        </div>
+
+
+        <div class="benefits">
+
+          <div class="benefit">
+            <div class="benefit-icon">✓</div>
+
+            <div>
+              <h3>Qualified Professionals</h3>
+              <p>
+                Present medical specialists with clear qualifications,
+                specialties and availability.
+              </p>
+            </div>
+          </div>
+
+
+          <div class="benefit">
+            <div class="benefit-icon">◷</div>
+
+            <div>
+              <h3>Easy Appointment Access</h3>
+              <p>
+                Patients can quickly find a suitable doctor and
+                request an appointment.
+              </p>
+            </div>
+          </div>
+
+
+          <div class="benefit">
+            <div class="benefit-icon">+</div>
+
+            <div>
+              <h3>Multiple Medical Services</h3>
+              <p>
+                Organize different healthcare departments and
+                specialties in one clear experience.
+              </p>
+            </div>
+          </div>
+
+
+          <div class="benefit">
+            <div class="benefit-icon">●</div>
+
+            <div>
+              <h3>Patient-Focused Design</h3>
+              <p>
+                Simple navigation and readable information help
+                patients find what they need faster.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= APPOINTMENT ================= -->
+
+    <section class="appointment" id="appointment">
+
+      <div class="container">
+
+        <div class="appointment-box">
+
+          <div class="appointment-header">
+            <div class="eyebrow">Appointments</div>
+
+            <h2>Request an appointment.</h2>
+
+            <p>
+              Select your preferred service and provide your details.
+              This portfolio version uses a demonstration form.
+            </p>
+          </div>
+
+
+          <form id="appointmentForm">
+
+            <div class="form-grid">
+
+              <div class="field">
+                <label for="name">Patient Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Enter patient name"
+                  required
+                >
+              </div>
+
+
+              <div class="field">
+                <label for="phone">Phone Number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  placeholder="Enter phone number"
+                  required
+                >
+              </div>
+
+
+              <div class="field">
+                <label for="service">Medical Service</label>
+
+                <select id="service" required>
+                  <option value="">Select service</option>
+                  <option>General Medicine</option>
+                  <option>Cardiology</option>
+                  <option>Dermatology</option>
+                  <option>Pediatrics</option>
+                  <option>Diagnostics</option>
+                  <option>Emergency Care</option>
+                </select>
+              </div>
+
+
+              <div class="field">
+                <label for="date">Preferred Date</label>
+
+                <input
+                  type="date"
+                  id="date"
+                  required
+                >
+              </div>
+
+
+              <div class="field">
+                <label for="time">Preferred Time</label>
+
+                <select id="time" required>
+                  <option value="">Select time</option>
+                  <option>09:00 AM</option>
+                  <option>10:00 AM</option>
+                  <option>11:00 AM</option>
+                  <option>12:00 PM</option>
+                  <option>02:00 PM</option>
+                  <option>03:00 PM</option>
+                  <option>04:00 PM</option>
+                  <option>05:00 PM</option>
+                </select>
+              </div>
+
+
+              <div class="field">
+                <label for="doctor">Preferred Doctor</label>
+
+                <select id="doctor">
+                  <option value="">Any available doctor</option>
+                  <option>Dr. Sarah Malik</option>
+                  <option>Dr. Ahmed Khan</option>
+                  <option>Dr. Maya Raza</option>
+                </select>
+              </div>
+
+
+              <div class="field full">
+                <label for="message">Additional Information</label>
+
+                <textarea
+                  id="message"
+                  placeholder="Briefly describe your reason for appointment"
+                ></textarea>
+              </div>
+
+
+              <div class="field full">
+                <button class="btn btn-primary" type="submit">
+                  Request Appointment
+                </button>
+              </div>
+
+            </div>
+
+          </form>
+
+          <div class="form-note">
+            Demo notice: This form does not send or store real medical information.
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= TESTIMONIALS ================= -->
+
+    <section class="testimonials">
+
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">Patient Experience</div>
+          <h2>Designed around patient confidence.</h2>
+          <p>
+            Example testimonials for the healthcare website concept.
+          </p>
+        </div>
+
+
+        <div class="reviews-grid">
+
+          <div class="review">
+            <div class="stars">★★★★★</div>
+
+            <p>
+              “The information was clear and the appointment process
+              felt simple and organized.”
+            </p>
+
+            <div class="review-user">
+              <div class="avatar">A</div>
+
+              <div>
+                <strong>Ali R.</strong>
+                <small>Patient experience</small>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="review">
+            <div class="stars">★★★★★</div>
+
+            <p>
+              “A clean healthcare experience that makes finding the
+              right service much easier.”
+            </p>
+
+            <div class="review-user">
+              <div class="avatar">S</div>
+
+              <div>
+                <strong>Sana M.</strong>
+                <small>Patient experience</small>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="review">
+            <div class="stars">★★★★★</div>
+
+            <p>
+              “The doctor information and appointment section are
+              straightforward and easy to understand.”
+            </p>
+
+            <div class="review-user">
+              <div class="avatar">H</div>
+
+              <div>
+                <strong>Hamza K.</strong>
+                <small>Patient experience</small>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= CTA ================= -->
+
+    <section class="cta">
+
+      <div class="container">
+
+        <div class="cta-box">
+
+          <div>
+            <h2>Healthcare that feels simpler.</h2>
+
+            <p>
+              Explore doctors, services and appointment options.
+            </p>
+          </div>
+
+          <button class="btn" onclick="scrollToAppointment()">
+            Book Appointment
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+
+          <div class="brand">
+            <span class="brand-mark">M</span>
+            <span>MedixCare</span>
+          </div>
+
+          <p>
+            A modern healthcare website concept focused on clear
+            medical information and patient-friendly access.
+          </p>
+
+        </div>
+
+
+        <div>
+          <h4>Explore</h4>
+          <a href="doctors.html">Doctors</a>
+          <a href="services.html">Services</a>
+          <a href="appointment.html">Appointments</a>
+        </div>
+
+
+        <div>
+          <h4>Company</h4>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="privacy.html">Privacy Policy</a>
+        </div>
+
+
+        <div>
+          <h4>Information</h4>
+          <a href="terms.html">Terms & Conditions</a>
+          <a href="contact.html">Support</a>
+          <a href="index.html#appointment">Book Appointment</a>
+        </div>
+
+      </div>
+
+
+      <div class="copyright">
+        <span>© 2026 MedixCare. All rights reserved.</span>
+        <span>Healthcare website concept for portfolio demonstration.</span>
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ================= TOAST ================= -->
+
+  <div class="toast" id="toast"></div>
+
+
+  <script>
+
+    /* ================= MOBILE MENU ================= */
+
+    const menuBtn = document.getElementById("menuBtn");
+    const mainNav = document.getElementById("mainNav");
+
+    menuBtn.addEventListener("click", function () {
+      mainNav.classList.toggle("open");
+    });
+
+
+    document.querySelectorAll("#mainNav a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        mainNav.classList.remove("open");
+      });
+    });
+
+
+    /* ================= TOAST ================= */
+
+    function showToast(message) {
+
+      const toast = document.getElementById("toast");
+
+      toast.textContent = message;
+      toast.classList.add("show");
+
+      setTimeout(function () {
+        toast.classList.remove("show");
+      }, 2800);
+    }
+
+
+    /* ================= APPOINTMENT SCROLL ================= */
+
+    function scrollToAppointment() {
+
+      const section = document.getElementById("appointment");
+
+      if (section) {
+        section.scrollIntoView({
+          behavior: "smooth"
+        });
+      }
+    }
+
+
+    /* ================= APPOINTMENT FORM ================= */
+
+    const appointmentForm = document.getElementById("appointmentForm");
+
+    appointmentForm.addEventListener("submit", function (event) {
+
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+
+      if (!name) {
+        showToast("Please enter the patient name.");
+        return;
+      }
+
+      showToast(
+        "Appointment request received — demo only."
+      );
+
+      appointmentForm.reset();
+
+    });
+
+
+    /* ================= DATE LIMIT ================= */
+
+    const dateInput = document.getElementById("date");
+
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, "0");
+    const day = String(today.getDate()).padStart(2, "0");
+
+    dateInput.min = `${year}-${month}-${day}`;
+
+  </script>
+
+</body>
+  </html>
