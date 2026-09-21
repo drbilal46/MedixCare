@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Terms & Conditions | MedixCare</title>
+  <meta name="description" content="Terms and Conditions for the MedixCare healthcare website portfolio concept.">
+  <meta name="theme-color" content="#176b68">
+
+  <style>
+    :root {
+      --bg: #f5f8f8;
+      --surface: #ffffff;
+      --surface-soft: #eef5f4;
+      --text: #172323;
+      --muted: #687777;
+      --border: #dfe8e7;
+      --primary: #176b68;
+      --primary-dark: #0f514f;
+      --secondary: #dcefed;
+      --navy: #183334;
+      --shadow: 0 18px 45px rgba(23, 55, 54, 0.08);
+      --radius: 22px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: var(--navy);
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 13px;
+      background: var(--primary);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 1.25rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      color: #526161;
+      font-size: 0.94rem;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 45px;
+      padding: 0 18px;
+      border-radius: 13px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--primary);
+      border-color: var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary);
+    }
+
+    .menu-btn {
+      display: none;
+      width: 43px;
+      height: 43px;
+      border: 1px solid var(--border);
+      background: white;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 75px 0 55px;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(61, 143, 137, 0.12), transparent 28%),
+        radial-gradient(circle at 10% 80%, rgba(23, 107, 104, 0.07), transparent 25%),
+        var(--bg);
+    }
+
+    .hero-content {
+      max-width: 790px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 7px 12px;
+      background: var(--secondary);
+      color: var(--primary-dark);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      line-height: 1.08;
+      letter-spacing: -1.5px;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.02rem;
+      max-width: 690px;
+    }
+
+    .notice {
+      margin-top: 28px;
+      padding: 18px 20px;
+      background: #fffaf1;
+      border: 1px solid #eadfc8;
+      border-radius: 17px;
+      color: #705c39;
+      font-size: 0.9rem;
+    }
+
+    .notice strong {
+      color: #59451f;
+    }
+
+    /* CONTENT */
+
+    .section {
+      padding: 65px 0;
+    }
+
+    .terms-layout {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 35px;
+      align-items: start;
+    }
+
+    .terms-nav {
+      position: sticky;
+      top: 105px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 17px;
+    }
+
+    .terms-nav strong {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--navy);
+      font-size: 0.9rem;
+    }
+
+    .terms-nav a {
+      display: block;
+      padding: 7px 8px;
+      border-radius: 8px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      transition: 0.2s ease;
+    }
+
+    .terms-nav a:hover {
+      color: var(--primary);
+      background: var(--surface-soft);
+    }
+
+    .terms-content {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 25px;
+      padding: 35px;
+      box-shadow: var(--shadow);
+    }
+
+    .terms-section {
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .terms-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .terms-section h2 {
+      font-size: 1.45rem;
+      color: var(--navy);
+      margin-bottom: 11px;
+    }
+
+    .terms-section h3 {
+      font-size: 1rem;
+      margin: 18px 0 7px;
+      color: var(--text);
+    }
+
+    .terms-section p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 11px;
+    }
+
+    .terms-section ul {
+      margin: 10px 0 0 20px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .terms-section li {
+      margin-bottom: 7px;
+    }
+
+    .last-updated {
+      display: inline-block;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    /* CTA */
+
+    .cta {
+      background: var(--navy);
+      color: white;
+      border-radius: 27px;
+      padding: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .cta h2 {
+      font-size: clamp(1.55rem, 3vw, 2.2rem);
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .cta p {
+      color: #c7d6d5;
+      max-width: 650px;
+      font-size: 0.9rem;
+    }
+
+    .cta .btn-primary {
+      background: white;
+      color: var(--primary-dark);
+      flex-shrink: 0;
+    }
+
+    .cta .btn-primary:hover {
+      background: var(--secondary);
+    }
+
+    /* FOOTER */
+
+    footer {
+      margin-top: 70px;
+      background: #102727;
+      color: white;
+      padding: 55px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 45px;
+      padding-bottom: 35px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .footer-brand p {
+      color: #aebfbe;
+      max-width: 390px;
+      margin-top: 13px;
+      font-size: 0.9rem;
+    }
+
+    .footer-title {
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 9px;
+    }
+
+    .footer-links a {
+      color: #b8c8c7;
+      font-size: 0.87rem;
+      transition: 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      padding-top: 22px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: #8fa3a2;
+      font-size: 0.78rem;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 950px) {
+
+      .nav-links {
+        position: absolute;
+        top: 76px;
+        left: 4%;
+        right: 4%;
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 17px;
+        padding: 15px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 3px;
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 11px 12px;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        background: var(--surface-soft);
+      }
+
+      .nav-actions {
+        display: none;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .terms-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .terms-nav {
+        position: static;
+      }
+
+      .terms-nav a {
+        display: inline-block;
+        margin-right: 5px;
+      }
+    }
+
+    @media (max-width: 700px) {
+
+      .hero {
+        padding: 55px 0 45px;
+      }
+
+      .section {
+        padding: 50px 0;
+      }
+
+      .terms-content {
+        padding: 24px;
+      }
+
+      .cta {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container nav">
+
+      <a href="index.html" class="brand">
+        <span class="brand-mark">M</span>
+        <span>MedixCare</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="doctors.html">Doctors</a>
+        <a href="services.html">Services</a>
+        <a href="appointment.html">Appointments</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+
+        <button
+          class="btn btn-secondary"
+          onclick="showDemoNotice()"
+        >
+          Patient Portal
+        </button>
+
+        <a href="appointment.html" class="btn btn-primary">
+          Book Appointment
+        </a>
+
+      </div>
+
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Open navigation menu"
+      >
+        ☰
+      </button>
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+
+    <section class="hero">
+      <div class="container">
+
+        <div class="hero-content">
+
+          <span class="eyebrow">Terms & Conditions</span>
+
+          <h1>Terms for using MedixCare.</h1>
+
+          <p>
+            These terms explain the intended use of the MedixCare website
+            concept and the limitations of its demonstration features.
+          </p>
+
+          <div class="notice">
+            <strong>Portfolio Demo Notice:</strong>
+            MedixCare is a fictional healthcare website concept.
+            It is not a real hospital, clinic, medical organization,
+            or healthcare service.
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TERMS -->
+    <section class="section">
+
+      <div class="container">
+
+        <div class="terms-layout">
+
+          <!-- SIDE NAV -->
+          <aside class="terms-nav">
+
+            <strong>On this page</strong>
+
+            <a href="#acceptance">Acceptance</a>
+            <a href="#purpose">Website Purpose</a>
+            <a href="#medical">Medical Information</a>
+            <a href="#appointments">Appointments</a>
+            <a href="#content">Website Content</a>
+            <a href="#intellectual">Intellectual Property</a>
+            <a href="#availability">Availability</a>
+            <a href="#liability">Liability</a>
+            <a href="#changes">Changes</a>
+            <a href="#contact">Contact</a>
+
+          </aside>
+
+          <!-- TERMS CONTENT -->
+          <article class="terms-content">
+
+            <section class="terms-section" id="acceptance">
+
+              <h2>1. Acceptance of Terms</h2>
+
+              <p>
+                By accessing and viewing the MedixCare website concept,
+                you acknowledge that the website is provided as a
+                portfolio and demonstration project.
+              </p>
+
+              <p>
+                These Terms & Conditions describe the intended use of
+                the current demonstration website.
+              </p>
+
+            </section>
+
+            <section class="terms-section" id="purpose">
+
+              <h2>2. Website Purpose</h2>
+
+              <p>
+                MedixCare has been created to demonstrate a modern,
+                responsive healthcare website interface.
+              </p>
+
+              <ul>
+                <li>The website is a portfolio project.</li>
+                <li>Healthcare services shown are demonstration content.</li>
+                <li>Doctor profiles are fictional.</li>
+                <li>Statistics and testimonials are fictional.</li>
+                <li>Appointment features are demonstrations only.</li>
+              </ul>
+
+            </section>
+
+            <section class="terms-section" id="medical">
+
+              <h2>3. Medical Information</h2>
+
+              <p>
+                Nothing presented on this website should be considered
+                medical advice, diagnosis, treatment, or a substitute
+                for consultation with a qualified healthcare professional.
+              </p>
+
+              <p>
+                The current website is not intended to provide real
+                medical services or emergency medical assistance.
+              </p>
+
+            </section>
+
+            <section class="terms-section" id="appointments">
+
+              <h2>4. Appointments</h2>
+
+              <p>
+                The appointment interface is included solely to demonstrate
+                the user experience of a healthcare booking system.
+              </p>
+
+              <ul>
+                <li>Submitting the form does not create a real appointment.</li>
+                <li>No doctor is actually booked.</li>
+                <li>No appointment confirmation is sent.</li>
+                <li>No patient record is created.</li>
+              </ul>
+
+            </section>
+
+            <section class="terms-section" id="content">
+
+              <h2>5. Website Content</h2>
+
+              <p>
+                Information displayed throughout the MedixCare website,
+                including names, services, statistics, availability,
+                testimonials, and descriptions, is intended for
+                demonstration purposes.
+              </p>
+
+              <p>
+                Users should not rely on demonstration content as factual
+                information about a real healthcare organization.
+              </p>
+
+            </section>
+
+            <section class="terms-section" id="intellectual">
+
+              <h2>6. Intellectual Property</h2>
+
+              <p>
+                The design, layout, interface structure, written content,
+                branding elements, and code used in this portfolio concept
+                are presented as part of the MedixCare demonstration project.
+              </p>
+
+              <p>
+                Any future commercial use, licensing, or transfer of this
+                website would be subject to a separate agreement where applicable.
+              </p>
+
+            </section>
+
+            <section class="terms-section" id="availability">
+
+              <h2>7. Website Availability</h2>
+
+              <p>
+                Because this is a portfolio website concept, features may
+                be changed, removed, updated, or temporarily unavailable
+                without notice.
+              </p>
+
+              <p>
+                No guarantee is made that every demonstration feature will
+                remain available indefinitely.
+              </p>
+
+            </section>
+
+            <section class="terms-section" id="liability">
+
+              <h2>8. Limitation of Liability</h2>
+
+              <p>
+                MedixCare is a demonstration project and is not responsible
+                for medical decisions, healthcare outcomes, appointments,
+                communications, or other real-world actions based on
+                demonstration content.
+              </p>
+
+              <p>
+                A production healthcare website would require appropriate
+                legal, medical, security, privacy, and regulatory review
+                before being used for real healthcare services.
+              </p>
+
+            </section>
+
+            <section class="terms-section" id="changes">
+
+              <h2>9. Changes to These Terms</h2>
+
+              <p>
+                These Terms & Conditions may be updated when the MedixCare
+                portfolio concept is modified or expanded.
+              </p>
+
+              <p>
+                The latest version displayed on this page should be
+                considered the current version of the demonstration terms.
+              </p>
+
+            </section>
+
+            <section class="terms-section" id="contact">
+
+              <h2>10. Contact</h2>
+
+              <p>
+                For questions about the website concept, visit the
+                MedixCare Contact page.
+              </p>
+
+              <p>
+                <a
+                  href="contact.html"
+                  style="color: var(--primary); font-weight: 700;"
+                >
+                  Go to Contact Page →
+                </a>
+              </p>
+
+              <span class="last-updated">
+                Last updated: September 2026
+              </span>
+
+            </section>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CTA -->
+    <section class="section" style="padding-top: 0;">
+
+      <div class="container">
+
+        <div class="cta">
+
+          <div>
+            <h2>Explore the MedixCare website.</h2>
+
+            <p>
+              View the complete healthcare concept, including doctors,
+              services, appointments, and contact experience.
+            </p>
+          </div>
+
+          <a href="index.html" class="btn btn-primary">
+            Back to Home
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+
+          <a href="index.html" class="brand">
+            <span class="brand-mark">M</span>
+            <span style="color:white;">MedixCare</span>
+          </a>
+
+          <p>
+            A professional healthcare website concept designed
+            for portfolio demonstration and modern web experience.
+          </p>
+
+        </div>
+
+        <div>
+
+          <div class="footer-title">Explore</div>
+
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="doctors.html">Doctors</a>
+            <a href="services.html">Services</a>
+            <a href="appointment.html">Appointments</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+          </div>
+
+        </div>
+
+        <div>
+
+          <div class="footer-title">Legal</div>
+
+          <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms & Conditions</a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 MedixCare. Portfolio Demo.</span>
+        <span>Healthcare Website Concept</span>
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+      });
+    });
+
+    function showDemoNotice() {
+      alert("Patient Portal is a portfolio demo feature.");
+    }
+  </script>
+
+</body>
+  </html>
