@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Services | MedixCare</title>
+  <meta name="description" content="Explore the healthcare services presented in the MedixCare portfolio website concept.">
+  <meta name="theme-color" content="#176b68">
+
+  <style>
+    :root {
+      --bg: #f5f8f8;
+      --surface: #ffffff;
+      --surface-soft: #eef5f4;
+      --text: #172323;
+      --muted: #687777;
+      --border: #dfe8e7;
+      --primary: #176b68;
+      --primary-dark: #0f514f;
+      --secondary: #dcefed;
+      --accent: #3d8f89;
+      --navy: #183334;
+      --gold: #b38a4b;
+      --shadow: 0 18px 45px rgba(23, 55, 54, 0.08);
+      --radius: 22px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1160px, 92%);
+      margin: auto;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--navy);
+      white-space: nowrap;
+    }
+
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 13px;
+      background: var(--primary);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+      box-shadow: 0 8px 20px rgba(23, 107, 104, 0.2);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 0.94rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: none;
+      cursor: pointer;
+      border-radius: 12px;
+      padding: 12px 18px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-light {
+      background: var(--secondary);
+      color: var(--primary-dark);
+    }
+
+    .btn-light:hover {
+      background: #cce6e3;
+    }
+
+    .menu-btn {
+      display: none;
+      border: 1px solid var(--border);
+      background: white;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 82px 0 64px;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(61, 143, 137, 0.12), transparent 30%),
+        linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--secondary);
+      color: var(--primary-dark);
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 4.3rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      color: var(--navy);
+      max-width: 700px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 1.06rem;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .service-preview {
+      background: var(--navy);
+      color: white;
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-preview::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(61, 143, 137, 0.2);
+      right: -60px;
+      bottom: -70px;
+    }
+
+    .preview-label {
+      color: #b9d9d6;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .service-preview h2 {
+      font-size: 1.7rem;
+      line-height: 1.2;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .preview-list {
+      display: grid;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .preview-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+    }
+
+    .preview-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.12);
+      display: grid;
+      place-items: center;
+      font-size: 0.9rem;
+    }
+
+    .preview-item strong {
+      font-size: 0.9rem;
+    }
+
+    /* SECTION */
+
+    section {
+      padding: 76px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 25px;
+      margin-bottom: 34px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      max-width: 650px;
+    }
+
+    /* SEARCH */
+
+    .service-tools {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .search-box {
+      flex: 1;
+      min-width: 240px;
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 14px 16px 14px 44px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      outline: none;
+      background: var(--surface);
+      color: var(--text);
+      transition: 0.2s ease;
+    }
+
+    .search-box input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(61, 143, 137, 0.1);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+    }
+
+    .filter-btn {
+      border: 1px solid var(--border);
+      background: white;
+      color: var(--muted);
+      border-radius: 14px;
+      padding: 0 17px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    /* SERVICE CARDS */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 25px;
+      box-shadow: 0 8px 25px rgba(23, 55, 54, 0.04);
+      transition: 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+      border-color: #c9dddb;
+    }
+
+    .service-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 15px;
+      background: var(--secondary);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      color: var(--navy);
+      margin-bottom: 9px;
+      font-size: 1.12rem;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 20px;
+    }
+
+    .service-link {
+      margin-top: auto;
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 0.88rem;
+    }
+
+    .service-link:hover {
+      color: var(--primary-dark);
+    }
+
+    .no-results {
+      display: none;
+      padding: 30px;
+      text-align: center;
+      color: var(--muted);
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      grid-column: 1 / -1;
+    }
+
+    /* PROCESS */
+
+    .process-section {
+      background: var(--surface-soft);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .process-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 25px;
+      position: relative;
+    }
+
+    .process-number {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--primary);
+      color: white;
+      font-weight: 800;
+      margin-bottom: 17px;
+    }
+
+    .process-card h3 {
+      color: var(--navy);
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    .process-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* INFO */
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .info-card {
+      background: var(--navy);
+      color: white;
+      border-radius: 26px;
+      padding: 34px;
+    }
+
+    .info-card h2 {
+      font-size: 2rem;
+      line-height: 1.15;
+      margin-bottom: 15px;
+    }
+
+    .info-card p {
+      color: #c4d4d3;
+      margin-bottom: 25px;
+    }
+
+    .info-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .info-list div {
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+      color: #e7f0ef;
+      font-size: 0.92rem;
+    }
+
+    .check {
+      width: 21px;
+      height: 21px;
+      flex: 0 0 21px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+      display: grid;
+      place-items: center;
+      font-size: 0.72rem;
+    }
+
+    .notice-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      padding: 34px;
+    }
+
+    .notice-card .small-label {
+      color: var(--gold);
+      font-weight: 800;
+      font-size: 0.8rem;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .notice-card h2 {
+      color: var(--navy);
+      font-size: 1.8rem;
+      line-height: 1.2;
+      margin-bottom: 13px;
+    }
+
+    .notice-card p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    /* CTA */
+
+    .cta {
+      padding-top: 20px;
+    }
+
+    .cta-box {
+      background: var(--primary);
+      color: white;
+      border-radius: 28px;
+      padding: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .cta-box h2 {
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+
+    .cta-box p {
+      color: #d5e8e6;
+      max-width: 650px;
+    }
+
+    .cta-box .btn-light {
+      background: white;
+      color: var(--primary-dark);
+      flex-shrink: 0;
+    }
+
+    /* FOOTER */
+
+    footer {
+      margin-top: 80px;
+      background: var(--navy);
+      color: white;
+      padding: 55px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr 0.7fr 0.9fr;
+      gap: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .footer-brand p {
+      color: #b7c8c7;
+      max-width: 350px;
+      margin-top: 14px;
+      font-size: 0.9rem;
+    }
+
+    .footer-title {
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 9px;
+    }
+
+    .footer-links a {
+      color: #b7c8c7;
+      font-size: 0.88rem;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+      color: #91a8a6;
+      font-size: 0.8rem;
+    }
+
+    /* TOAST */
+
+    .toast {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      max-width: 340px;
+      background: var(--navy);
+      color: white;
+      padding: 14px 18px;
+      border-radius: 13px;
+      box-shadow: var(--shadow);
+      transform: translateY(120px);
+      opacity: 0;
+      transition: 0.3s ease;
+      z-index: 2000;
+      font-size: 0.88rem;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 980px) {
+      .nav-links {
+        gap: 14px;
+      }
+
+      .nav-actions .btn-light {
+        display: none;
+      }
+
+      .hero-grid,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        min-height: 68px;
+      }
+
+      .menu-btn {
+        display: grid;
+        place-items: center;
+      }
+
+      .nav-links {
+        position: absolute;
+        left: 4%;
+        right: 4%;
+        top: 75px;
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 15px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 3px;
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 11px 12px;
+        border-radius: 10px;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        background: var(--surface-soft);
+      }
+
+      .nav-actions .btn-primary {
+        display: none;
+      }
+
+      .hero {
+        padding: 60px 0 45px;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .services-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-tools {
+        flex-direction: column;
+      }
+
+      .filter-btn {
+        min-height: 46px;
+      }
+
+      .cta-box {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: min(94%, 1160px);
+      }
+
+      .hero h1 {
+        font-size: 2.35rem;
+      }
+
+      .service-preview,
+      .info-card,
+      .notice-card {
+        padding: 25px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container nav">
+
+      <a href="index.html" class="logo">
+        <span class="logo-mark">M</span>
+        <span>MedixCare</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="doctors.html">Doctors</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="appointment.html">Appointments</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-light" onclick="showToast('Patient Portal is a demo feature.')">
+          Patient Portal
+        </button>
+
+        <a href="appointment.html" class="btn btn-primary">
+          Book Appointment
+        </a>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+          ☰
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <main>
+
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div>
+          <div class="eyebrow">Healthcare Services</div>
+
+          <h1>
+            Care designed around
+            <span>your needs.</span>
+          </h1>
+
+          <p>
+            Explore the healthcare services presented in the MedixCare website concept,
+            from everyday medical care to specialist consultations and diagnostic support.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#services" class="btn btn-primary">
+              Explore Services
+            </a>
+
+            <a href="appointment.html" class="btn btn-light">
+              Book an Appointment
+            </a>
+          </div>
+        </div>
+
+        <div class="service-preview">
+
+          <div class="preview-label">MEDIXCARE SERVICE GUIDE</div>
+
+          <h2>
+            A clear, organized experience for finding the right care.
+          </h2>
+
+          <div class="preview-list">
+
+            <div class="preview-item">
+              <div class="preview-icon">01</div>
+              <strong>Primary Care</strong>
+            </div>
+
+            <div class="preview-item">
+              <div class="preview-icon">02</div>
+              <strong>Specialist Care</strong>
+            </div>
+
+            <div class="preview-item">
+              <div class="preview-icon">03</div>
+              <strong>Diagnostics</strong>
+            </div>
+
+            <div class="preview-item">
+              <div class="preview-icon">04</div>
+              <strong>Emergency Support</strong>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="container">
+
+        <div class="section-head">
+          <div>
+            <h2>Our healthcare services</h2>
+            <p>
+              Example service categories created for the MedixCare healthcare website concept.
+            </p>
+          </div>
+        </div>
+
+        <div class="service-tools">
+
+          <div class="search-box">
+            <span class="search-icon">⌕</span>
+            <input
+              type="text"
+              id="serviceSearch"
+              placeholder="Search services..."
+              autocomplete="off"
+            >
+          </div>
+
+          <button class="filter-btn active" data-filter="all">
+            All Services
+          </button>
+
+          <button class="filter-btn" data-filter="specialist">
+            Specialist
+          </button>
+
+          <button class="filter-btn" data-filter="general">
+            General Care
+          </button>
+
+          <button class="filter-btn" data-filter="support">
+            Support
+          </button>
+
+        </div>
+
+
+        <div class="services-grid" id="servicesGrid">
+
+          <article class="service-card" data-category="general" data-name="General Medicine Primary Care">
+            <div class="service-icon">GM</div>
+            <h3>General Medicine</h3>
+            <p>
+              A primary-care concept for routine consultations, common health concerns,
+              and general medical guidance.
+            </p>
+            <a href="appointment.html" class="service-link">Request Appointment →</a>
+          </article>
+
+
+          <article class="service-card" data-category="specialist" data-name="Cardiology Heart Specialist">
+            <div class="service-icon">CA</div>
+            <h3>Cardiology</h3>
+            <p>
+              A specialist-care category focused on cardiovascular consultations
+              and heart-health support.
+            </p>
+            <a href="appointment.html" class="service-link">Request Appointment →</a>
+          </article>
+
+
+          <article class="service-card" data-category="specialist" data-name="Dermatology Skin Care">
+            <div class="service-icon">DE</div>
+            <h3>Dermatology</h3>
+            <p>
+              A dedicated service category for skin, hair, and common dermatological
+              concerns.
+            </p>
+            <a href="appointment.html" class="service-link">Request Appointment →</a>
+          </article>
+
+
+          <article class="service-card" data-category="specialist" data-name="Pediatrics Children Care">
+            <div class="service-icon">PE</div>
+            <h3>Pediatrics</h3>
+            <p>
+              A child-focused healthcare category designed for consultations
+              and routine pediatric care.
+            </p>
+            <a href="appointment.html" class="service-link">Request Appointment →</a>
+          </article>
+
+
+          <article class="service-card" data-category="specialist" data-name="Neurology Brain Nervous System">
+            <div class="service-icon">NE</div>
+            <h3>Neurology</h3>
+            <p>
+              A specialist category covering consultations related to the brain,
+              nerves, and nervous-system concerns.
+            </p>
+            <a href="appointment.html" class="service-link">Request Appointment →</a>
+          </article>
+
+
+          <article class="service-card" data-category="specialist" data-name="Dentistry Dental Oral Care">
+            <div class="service-icon">DN</div>
+            <h3>Dentistry</h3>
+            <p>
+              A dental-care category for oral health consultations,
+              preventive care, and dental services.
+            </p>
+            <a href="appointment.html" class="service-link">Request Appointment →</a>
+          </article>
+
+
+          <article class="service-card" data-category="support" data-name="Diagnostics Laboratory Tests">
+            <div class="service-icon">DX</div>
+            <h3>Diagnostics</h3>
+            <p>
+              A diagnostic-support category representing laboratory tests,
+              screening, and health assessment workflows.
+            </p>
+            <a href="appointment.html" class="service-link">Request Appointment →</a>
+          </article>
+
+
+          <article class="service-card" data-category="specialist" data-name="Orthopedics Bones Joints">
+            <div class="service-icon">OR</div>
+            <h3>Orthopedics</h3>
+            <p>
+              A specialist category for bones, joints, muscles,
+              and mobility-related consultations.
+            </p>
+            <a href="appointment.html" class="service-link">Request Appointment →</a>
+          </article>
+
+
+          <article class="service-card" data-category="specialist" data-name="Women's Health Gynecology">
+            <div class="service-icon">WH</div>
+            <h3>Women's Health</h3>
+            <p>
+              A dedicated healthcare category representing women's
+              wellness and specialist consultation services.
+            </p>
+            <a href="appointment.html" class="service-link">Request Appointment →</a>
+          </article>
+
+
+          <article class="service-card" data-category="general" data-name="Preventive Care Wellness">
+            <div class="service-icon">PC</div>
+            <h3>Preventive Care</h3>
+            <p>
+              A wellness-focused category for routine health checks,
+              prevention, and healthy-lifestyle support.
+            </p>
+            <a href="appointment.html" class="service-link">Request Appointment →</a>
+          </article>
+
+
+          <article class="service-card" data-category="support" data-name="Emergency Care Urgent Support">
+            <div class="service-icon">ER</div>
+            <h3>Emergency Care</h3>
+            <p>
+              An emergency-support category representing urgent-care
+              access and rapid healthcare assistance.
+            </p>
+            <a href="appointment.html" class="service-link">Request Appointment →</a>
+          </article>
+
+
+          <article class="service-card" data-category="support" data-name="Pharmacy Support Medication Guidance">
+            <div class="service-icon">RX</div>
+            <h3>Pharmacy Support</h3>
+            <p>
+              A supporting category representing medication guidance
+              and pharmacy-related healthcare information.
+            </p>
+            <a href="appointment.html" class="service-link">Request Appointment →</a>
+          </article>
+
+
+          <div class="no-results" id="noResults">
+            No services matched your search.
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- PROCESS -->
+    <section class="process-section">
+      <div class="container">
+
+        <div class="section-head">
+          <div>
+            <h2>A simple care journey</h2>
+            <p>
+              The interface is designed to make the appointment journey clear and easy to understand.
+            </p>
+          </div>
+        </div>
+
+        <div class="process-grid">
+
+          <div class="process-card">
+            <div class="process-number">1</div>
+            <h3>Choose a service</h3>
+            <p>
+              Browse the available service categories and identify the type of care you need.
+            </p>
+          </div>
+
+          <div class="process-card">
+            <div class="process-number">2</div>
+            <h3>Select a doctor</h3>
+            <p>
+              Explore the doctors page and choose a suitable specialist from the demo profiles.
+            </p>
+          </div>
+
+          <div class="process-card">
+            <div class="process-number">3</div>
+            <h3>Request an appointment</h3>
+            <p>
+              Use the appointment interface to select a preferred date and time.
+            </p>
+          </div>
+
+          <div class="process-card">
+            <div class="process-number">4</div>
+            <h3>Continue your care</h3>
+            <p>
+              The concept provides a clean healthcare journey from discovery to appointment.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- INFORMATION -->
+    <section>
+      <div class="container info-grid">
+
+        <div class="info-card">
+          <h2>Designed for clarity, comfort, and trust.</h2>
+
+          <p>
+            MedixCare focuses on presenting healthcare information in a clean,
+            organized, and accessible digital experience.
+          </p>
+
+          <div class="info-list">
+
+            <div>
+              <span class="check">✓</span>
+              <span>Simple service discovery</span>
+            </div>
+
+            <div>
+              <span class="check">✓</span>
+              <span>Clear specialist categories</span>
+            </div>
+
+            <div>
+              <span class="check">✓</span>
+              <span>Responsive experience across devices</span>
+            </div>
+
+            <div>
+              <span class="check">✓</span>
+              <span>Professional healthcare visual identity</span>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="notice-card">
+          <div class="small-label">Portfolio Concept</div>
+
+          <h2>
+            A healthcare website concept built for demonstration.
+          </h2>
+
+          <p>
+            MedixCare is a portfolio/demo website. The doctors, services,
+            statistics, appointments, and other healthcare information shown
+            throughout the website are demonstration content.
+          </p>
+
+          <a href="about.html" class="btn btn-light">
+            Learn About MedixCare
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container">
+
+        <div class="cta-box">
+
+          <div>
+            <h2>Ready to explore the care journey?</h2>
+            <p>
+              Continue to the demo appointment experience and see how MedixCare
+              connects services, doctors, and appointment requests.
+            </p>
+          </div>
+
+          <a href="appointment.html" class="btn btn-light">
+            Book Appointment
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+
+          <a href="index.html" class="logo">
+            <span class="logo-mark">M</span>
+            <span style="color:white;">MedixCare</span>
+          </a>
+
+          <p>
+            A modern healthcare website concept created as a professional
+            portfolio demonstration.
+          </p>
+
+        </div>
+
+
+        <div>
+          <div class="footer-title">Explore</div>
+
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="doctors.html">Doctors</a>
+            <a href="services.html">Services</a>
+            <a href="appointment.html">Appointments</a>
+          </div>
+        </div>
+
+
+        <div>
+          <div class="footer-title">Company</div>
+
+          <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms & Conditions</a>
+          </div>
+        </div>
+
+
+        <div>
+          <div class="footer-title">MedixCare</div>
+
+          <div class="footer-links">
+            <a href="appointment.html">Book Appointment</a>
+            <a href="doctors.html">Find a Doctor</a>
+            <a href="services.html">View Services</a>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          © 2026 MedixCare. Portfolio demonstration only.
+        </span>
+
+        <span>
+          No real patient information is collected or stored.
+        </span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+
+  <script>
+
+    /* MOBILE MENU */
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+      });
+    });
+
+
+    /* TOAST */
+
+    let toastTimer;
+
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+
+      toast.textContent = message;
+      toast.classList.add("show");
+
+      clearTimeout(toastTimer);
+
+      toastTimer = setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2800);
+    }
+
+
+    /* SERVICE SEARCH + FILTER */
+
+    const searchInput = document.getElementById("serviceSearch");
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const serviceCards = document.querySelectorAll(".service-card");
+    const noResults = document.getElementById("noResults");
+
+    let activeFilter = "all";
+
+    function updateServices() {
+
+      const searchTerm = searchInput.value.trim().toLowerCase();
+
+      let visibleCount = 0;
+
+      serviceCards.forEach(card => {
+
+        const category = card.dataset.category;
+        const name = card.dataset.name.toLowerCase();
+
+        const matchesSearch = name.includes(searchTerm);
+        const matchesFilter =
+          activeFilter === "all" || category === activeFilter;
+
+        if (matchesSearch && matchesFilter) {
+          card.style.display = "flex";
+          visibleCount++;
+        } else {
+          card.style.display = "none";
+        }
+
+      });
+
+      noResults.style.display =
+        visibleCount === 0 ? "block" : "none";
+    }
+
+
+    searchInput.addEventListener("input", updateServices);
+
+
+    filterButtons.forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        filterButtons.forEach(btn => {
+          btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        activeFilter = button.dataset.filter;
+
+        updateServices();
+
+      });
+
+    });
+
+  </script>
+
+</body>
+              </html>
