@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About | MedixCare</title>
+  <meta name="description" content="Learn about MedixCare, a modern healthcare website concept created for portfolio demonstration.">
+  <meta name="theme-color" content="#176b68">
+
+  <style>
+    :root {
+      --bg: #f5f8f8;
+      --surface: #ffffff;
+      --surface-soft: #eef5f4;
+      --text: #172323;
+      --muted: #687777;
+      --border: #dfe8e7;
+      --primary: #176b68;
+      --primary-dark: #0f514f;
+      --secondary: #dcefed;
+      --accent: #3d8f89;
+      --navy: #183334;
+      --gold: #b38a4b;
+      --shadow: 0 18px 45px rgba(23, 55, 54, 0.08);
+      --radius: 22px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1160px, 92%);
+      margin: auto;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--navy);
+      white-space: nowrap;
+    }
+
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 13px;
+      background: var(--primary);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+      box-shadow: 0 8px 20px rgba(23, 107, 104, 0.2);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 0.94rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: none;
+      cursor: pointer;
+      border-radius: 12px;
+      padding: 12px 18px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-light {
+      background: var(--secondary);
+      color: var(--primary-dark);
+    }
+
+    .btn-light:hover {
+      background: #cce6e3;
+    }
+
+    .menu-btn {
+      display: none;
+      border: 1px solid var(--border);
+      background: white;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 82px 0 70px;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(61, 143, 137, 0.12), transparent 30%),
+        linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--secondary);
+      color: var(--primary-dark);
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero p {
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 1.06rem;
+      margin-bottom: 25px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .about-visual {
+      background: var(--navy);
+      color: white;
+      border-radius: 30px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-visual::after {
+      content: "";
+      position: absolute;
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      background: rgba(61, 143, 137, 0.18);
+      right: -65px;
+      bottom: -70px;
+    }
+
+    .visual-label {
+      color: #b9d9d6;
+      font-size: 0.78rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .about-visual h2 {
+      font-size: 1.8rem;
+      line-height: 1.2;
+      margin-bottom: 25px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .visual-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .visual-stat {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 17px;
+    }
+
+    .visual-stat strong {
+      display: block;
+      font-size: 1.4rem;
+      margin-bottom: 3px;
+    }
+
+    .visual-stat span {
+      color: #b9c9c8;
+      font-size: 0.78rem;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 76px 0;
+    }
+
+    .section-head {
+      margin-bottom: 32px;
+    }
+
+    .section-head h2 {
+      color: var(--navy);
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      line-height: 1.15;
+      margin-bottom: 9px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      max-width: 700px;
+    }
+
+    /* STORY */
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .story-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 30px;
+    }
+
+    .story-card h3 {
+      color: var(--navy);
+      font-size: 1.35rem;
+      margin-bottom: 13px;
+    }
+
+    .story-card p {
+      color: var(--muted);
+      font-size: 0.94rem;
+      margin-bottom: 14px;
+    }
+
+    .story-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* VALUES */
+
+    .values-section {
+      background: var(--surface-soft);
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .value-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 21px;
+      padding: 25px;
+      transition: 0.25s ease;
+    }
+
+    .value-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .value-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: var(--secondary);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .value-card h3 {
+      color: var(--navy);
+      margin-bottom: 8px;
+      font-size: 1.08rem;
+    }
+
+    .value-card p {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    /* APPROACH */
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 25px;
+      align-items: stretch;
+    }
+
+    .approach-intro {
+      background: var(--primary);
+      color: white;
+      border-radius: 26px;
+      padding: 34px;
+    }
+
+    .approach-intro h2 {
+      font-size: 2rem;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .approach-intro p {
+      color: #d3e7e5;
+      font-size: 0.92rem;
+    }
+
+    .approach-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .approach-item {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .approach-number {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--secondary);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .approach-item h3 {
+      color: var(--navy);
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+
+    .approach-item p {
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    /* DEMO NOTICE */
+
+    .notice {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 25px;
+      padding: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .notice-label {
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 800;
+      margin-bottom: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .notice h2 {
+      color: var(--navy);
+      font-size: 1.65rem;
+      line-height: 1.2;
+      margin-bottom: 9px;
+    }
+
+    .notice p {
+      color: var(--muted);
+      max-width: 720px;
+      font-size: 0.9rem;
+    }
+
+    /* CTA */
+
+    .cta {
+      padding-top: 0;
+    }
+
+    .cta-box {
+      background: var(--navy);
+      color: white;
+      border-radius: 28px;
+      padding: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .cta-box h2 {
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+
+    .cta-box p {
+      color: #c4d5d4;
+      max-width: 650px;
+    }
+
+    .cta-box .btn-light {
+      background: white;
+      color: var(--primary-dark);
+      flex-shrink: 0;
+    }
+
+    /* FOOTER */
+
+    footer {
+      margin-top: 80px;
+      background: var(--navy);
+      color: white;
+      padding: 55px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr 0.7fr 0.9fr;
+      gap: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .footer-brand p {
+      color: #b7c8c7;
+      max-width: 350px;
+      margin-top: 14px;
+      font-size: 0.9rem;
+    }
+
+    .footer-title {
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 9px;
+    }
+
+    .footer-links a {
+      color: #b7c8c7;
+      font-size: 0.88rem;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+      color: #91a8a6;
+      font-size: 0.8rem;
+    }
+
+    /* TOAST */
+
+    .toast {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      max-width: 340px;
+      background: var(--navy);
+      color: white;
+      padding: 14px 18px;
+      border-radius: 13px;
+      box-shadow: var(--shadow);
+      transform: translateY(120px);
+      opacity: 0;
+      transition: 0.3s ease;
+      z-index: 2000;
+      font-size: 0.88rem;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 980px) {
+      .nav-links {
+        gap: 14px;
+      }
+
+      .nav-actions .btn-light {
+        display: none;
+      }
+
+      .hero-grid,
+      .approach-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        min-height: 68px;
+      }
+
+      .menu-btn {
+        display: grid;
+        place-items: center;
+      }
+
+      .nav-links {
+        position: absolute;
+        left: 4%;
+        right: 4%;
+        top: 75px;
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 15px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 3px;
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 11px 12px;
+        border-radius: 10px;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        background: var(--surface-soft);
+      }
+
+      .nav-actions .btn-primary {
+        display: none;
+      }
+
+      .hero {
+        padding: 60px 0 50px;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .story-grid,
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .notice,
+      .cta-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: 94%;
+      }
+
+      .hero h1 {
+        font-size: 2.35rem;
+      }
+
+      .about-visual,
+      .story-card,
+      .approach-intro,
+      .notice {
+        padding: 25px;
+      }
+
+      .visual-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-box {
+        padding: 30px 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container nav">
+
+      <a href="index.html" class="logo">
+        <span class="logo-mark">M</span>
+        <span>MedixCare</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="doctors.html">Doctors</a>
+        <a href="services.html">Services</a>
+        <a href="appointment.html">Appointments</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+
+        <button
+          class="btn btn-light"
+          onclick="showToast('Patient Portal is a demo feature.')"
+        >
+          Patient Portal
+        </button>
+
+        <a href="appointment.html" class="btn btn-primary">
+          Book Appointment
+        </a>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+          ☰
+        </button>
+
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+
+      <div class="container hero-grid">
+
+        <div>
+
+          <div class="eyebrow">About MedixCare</div>
+
+          <h1>
+            A better digital experience for
+            <span>modern healthcare.</span>
+          </h1>
+
+          <p>
+            MedixCare is a modern healthcare website concept focused on
+            presenting medical services, doctors, and appointment experiences
+            through a clean and professional digital interface.
+          </p>
+
+          <div class="hero-actions">
+
+            <a href="services.html" class="btn btn-primary">
+              Explore Services
+            </a>
+
+            <a href="doctors.html" class="btn btn-light">
+              Meet Our Doctors
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="about-visual">
+
+          <div class="visual-label">
+            MEDIXCARE CONCEPT
+          </div>
+
+          <h2>
+            Designed around clarity, accessibility, and trust.
+          </h2>
+
+          <div class="visual-stats">
+
+            <div class="visual-stat">
+              <strong>06</strong>
+              <span>Core website pages</span>
+            </div>
+
+            <div class="visual-stat">
+              <strong>12+</strong>
+              <span>Example services</span>
+            </div>
+
+            <div class="visual-stat">
+              <strong>06</strong>
+              <span>Demo doctor profiles</span>
+            </div>
+
+            <div class="visual-stat">
+              <strong>100%</strong>
+              <span>Portfolio concept</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- STORY -->
+    <section>
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <h2>About the concept</h2>
+
+          <p>
+            MedixCare demonstrates how a healthcare organization could
+            present its digital experience in a professional and user-friendly way.
+          </p>
+
+        </div>
+
+
+        <div class="story-grid">
+
+          <div class="story-card">
+
+            <h3>The idea</h3>
+
+            <p>
+              Healthcare websites often contain a large amount of information.
+              MedixCare organizes that information into clear sections so visitors
+              can quickly understand services, doctors, and appointment options.
+            </p>
+
+            <p>
+              The design uses a calm medical visual language with a focused
+              teal, navy, and white color system.
+            </p>
+
+          </div>
+
+
+          <div class="story-card">
+
+            <h3>The experience</h3>
+
+            <p>
+              From the homepage to the appointment interface, every page follows
+              the same visual system and navigation structure.
+            </p>
+
+            <p>
+              The goal is to create a consistent experience that feels modern,
+              professional, accessible, and suitable for different screen sizes.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- VALUES -->
+    <section class="values-section">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <h2>What guides the design</h2>
+
+          <p>
+            The MedixCare concept is built around a few simple principles.
+          </p>
+
+        </div>
+
+
+        <div class="values-grid">
+
+          <div class="value-card">
+
+            <div class="value-icon">01</div>
+
+            <h3>Clarity</h3>
+
+            <p>
+              Information is structured into simple sections so visitors
+              can find what they need without unnecessary complexity.
+            </p>
+
+          </div>
+
+
+          <div class="value-card">
+
+            <div class="value-icon">02</div>
+
+            <h3>Trust</h3>
+
+            <p>
+              Clean typography, restrained colors, consistent spacing,
+              and transparent demo messaging create a trustworthy interface.
+            </p>
+
+          </div>
+
+
+          <div class="value-card">
+
+            <div class="value-icon">03</div>
+
+            <h3>Accessibility</h3>
+
+            <p>
+              Responsive layouts and clear controls help the experience
+              remain usable across desktop, tablet, and mobile screens.
+            </p>
+
+          </div>
+
+
+          <div class="value-card">
+
+            <div class="value-icon">04</div>
+
+            <h3>Consistency</h3>
+
+            <p>
+              Navigation, buttons, cards, forms, and content sections
+              follow one unified visual system across the website.
+            </p>
+
+          </div>
+
+
+          <div class="value-card">
+
+            <div class="value-icon">05</div>
+
+            <h3>Simplicity</h3>
+
+            <p>
+              The interface avoids unnecessary visual elements and keeps
+              the healthcare experience focused.
+            </p>
+
+          </div>
+
+
+          <div class="value-card">
+
+            <div class="value-icon">06</div>
+
+            <h3>Responsiveness</h3>
+
+            <p>
+              The layout adapts to different devices while maintaining
+              the same professional visual identity.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- APPROACH -->
+    <section>
+
+      <div class="container approach-grid">
+
+        <div class="approach-intro">
+
+          <h2>
+            From information to action.
+          </h2>
+
+          <p>
+            MedixCare connects important healthcare information into a
+            straightforward digital journey.
+          </p>
+
+        </div>
+
+
+        <div class="approach-list">
+
+          <div class="approach-item">
+
+            <div class="approach-number">1</div>
+
+            <div>
+              <h3>Discover</h3>
+
+              <p>
+                Visitors can quickly understand the healthcare concept
+                and explore the main service categories.
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="approach-item">
+
+            <div class="approach-number">2</div>
+
+            <div>
+              <h3>Explore</h3>
+
+              <p>
+                Dedicated doctors and services pages provide more
+                detailed information in an organized layout.
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="approach-item">
+
+            <div class="approach-number">3</div>
+
+            <div>
+              <h3>Choose</h3>
+
+              <p>
+                Users can select a service, doctor, preferred date,
+                and time through the appointment interface.
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="approach-item">
+
+            <div class="approach-number">4</div>
+
+            <div>
+              <h3>Continue</h3>
+
+              <p>
+                Clear navigation allows visitors to move naturally
+                between services, doctors, appointments, and contact information.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- DEMO NOTICE -->
+    <section>
+
+      <div class="container">
+
+        <div class="notice">
+
+          <div>
+
+            <div class="notice-label">
+              Important Demo Notice
+            </div>
+
+            <h2>
+              MedixCare is a portfolio website concept.
+            </h2>
+
+            <p>
+              This website does not represent a real hospital, clinic,
+              medical organization, or healthcare provider. Doctors,
+              services, statistics, testimonials, and appointment information
+              are demonstration content created for portfolio presentation.
+            </p>
+
+          </div>
+
+          <a href="contact.html" class="btn btn-primary">
+            Contact
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta">
+
+      <div class="container">
+
+        <div class="cta-box">
+
+          <div>
+
+            <h2>
+              Explore the MedixCare experience.
+            </h2>
+
+            <p>
+              See how the website connects healthcare services,
+              doctor profiles, and appointment interactions.
+            </p>
+
+          </div>
+
+          <a href="appointment.html" class="btn btn-light">
+            View Appointment Demo
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+
+          <a href="index.html" class="logo">
+            <span class="logo-mark">M</span>
+            <span style="color:white;">MedixCare</span>
+          </a>
+
+          <p>
+            A modern healthcare website concept created as a professional
+            portfolio demonstration.
+          </p>
+
+        </div>
+
+
+        <div>
+
+          <div class="footer-title">Explore</div>
+
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="doctors.html">Doctors</a>
+            <a href="services.html">Services</a>
+            <a href="appointment.html">Appointments</a>
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <div class="footer-title">Company</div>
+
+          <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms & Conditions</a>
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <div class="footer-title">MedixCare</div>
+
+          <div class="footer-links">
+            <a href="appointment.html">Book Appointment</a>
+            <a href="doctors.html">Find a Doctor</a>
+            <a href="services.html">View Services</a>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          © 2026 MedixCare. Portfolio demonstration only.
+        </span>
+
+        <span>
+          No real patient information is collected or stored.
+        </span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+
+  <script>
+
+    /* MOBILE MENU */
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+      });
+
+    });
+
+
+    /* TOAST */
+
+    let toastTimer;
+
+    function showToast(message) {
+
+      const toast = document.getElementById("toast");
+
+      toast.textContent = message;
+      toast.classList.add("show");
+
+      clearTimeout(toastTimer);
+
+      toastTimer = setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2800);
+
+    }
+
+  </script>
+
+</body>
+  </html>
